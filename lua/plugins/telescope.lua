@@ -35,9 +35,21 @@ return {
 				width = 0.66,
 				height = 0.60,
 			},
+			-- mappings = {
+			-- 	n = { ["q"] = require("telescope.actions").close },
+			-- 	i = { ["<esc>"] = require("telescope.actions").close },
+			-- },
 			mappings = {
-				n = { ["q"] = require("telescope.actions").close },
-				i = { ["<esc>"] = require("telescope.actions").close },
+				n = {
+					["q"] = function(...)
+						require("telescope.actions").close(...)
+					end,
+				},
+				i = {
+					["<esc>"] = function(...)
+						require("telescope.actions").close(...)
+					end,
+				},
 			},
 		},
 		extensions = { "themes", "terms", "fzf", "ui-select", "chezmoi" },
